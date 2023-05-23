@@ -4,6 +4,81 @@ func main() {
 
 }
 
+// score := []int{10, 5, 8, 9, 7}
+// total := sum(score)
+
+// fmt.Println(total)
+
+// 	result, err := calculate(10, 2, "+")
+// 	if err != nil {
+// 		fmt.Println("terjadi kesalahan")
+// 		fmt.Println(err.Error())
+// 	}
+// 	fmt.Println(result)
+
+// var total int
+
+// func sum(numbers []int) int {
+
+// 	for _, value := range numbers {
+// 		total = total + value
+
+// 	}
+// 	return total
+// }
+
+// func calculate(number, numberTwo int, operation string) (int, error) {
+
+// 	var result int
+// 	var errorResult error
+// 	switch operation {
+// 	case "+":
+// 		result = number + numberTwo
+
+// 	case "-":
+// 		result = number - numberTwo
+
+// 	case "*":
+// 		result = number * numberTwo
+
+// 	case "/":
+// 		result = number / numberTwo
+// 	default:
+// 		errorResult = errors.New("Unknown Operation")
+// 	}
+
+// 	return result, errorResult
+// }
+
+//belajar funcion
+// 	sentence := printmyresult("saya sedang")
+// 	fmt.Println(sentence)
+
+// 	hasil := tambahan(20, 30)
+// 	fmt.Println(hasil)
+
+// 	luas, keliling := luas(30, 20)
+// 	fmt.Println(luas, keliling)
+// }
+
+// func printmyresult(sentence string) string {
+// 	newsentence := sentence + "belajar golang"
+// 	return newsentence
+
+// }
+
+// func tambahan(number, nummber2 int) int {
+
+// 	return number + nummber2
+
+// }
+
+// func luas(panjang, lebar int) (int, int) {
+// 	total := panjang * lebar
+// 	keliling := 2 * (panjang + lebar)
+
+// 	return total, keliling
+
 //hitung rata-rata
 
 // scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
