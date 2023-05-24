@@ -1,8 +1,56 @@
 package main
 
+import (
+	"fmt"
+)
+
+// belajar struct
+type Students struct {
+	ID            int
+	Nama_Depan    string
+	Nama_Belakang string
+	Alamat        string
+	IsActivate    bool
+}
+
 func main() {
 
+	student := Students{1, "muhammad", "Ferdiansyah", "bandar lampung", true}
+	student2 := Students{1, "Mela Nur", "Hidayah", "Tulang bawang", true}
+
+	displaystudent1 := displaystudent(student)
+	displaystudent2 := displaystudent(student2)
+
+	fmt.Println(displaystudent1)
+	fmt.Println(displaystudent2)
+
 }
+
+func displaystudent(student Students) string {
+	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+}
+
+// student := students{ID: 1, Nama_Depan: "Muhammad Ari", Nama_Belakang: "Ferdiansyah", Alamat: "Bandar Lampung", IsActivate: true}
+
+// student := students{}
+// student.ID = 1
+// student.Nama_Depan = "Muhammad Ari"
+// student.Nama_Belakang = "Ferdiansyah"
+// student.Alamat = "Bandar Lampung"
+// student.IsActivate = true
+
+// student2 := students{}
+// student2.ID = 2
+// student2.Nama_Depan = "Mela Nur"
+// student2.Nama_Belakang = "Nurhidayah"
+// student2.Alamat = "Tulang Bawang"
+// student2.IsActivate = false
+
+// fmt.Println(student)
+// // fmt.Println(student2)
+// fmt.Println(student.Nama_Depan, student.Nama_Belakang)
+// fmt.Println(student2.Nama_Depan)
 
 // score := []int{10, 5, 8, 9, 7}
 // total := sum(score)
