@@ -13,23 +13,63 @@ type Students struct {
 	IsActivate    bool
 }
 
+type Ekskul struct {
+	Name         string
+	Admin        Students
+	Data_student []Students
+	Isavailable  bool
+}
+
+// method
+func (student Students) display() string {
+	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+}
+
+// func displaystudent(student Students) string {
+// return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+// }
+
 func main() {
 
 	student := Students{1, "muhammad", "Ferdiansyah", "bandar lampung", true}
 	student2 := Students{1, "Mela Nur", "Hidayah", "Tulang bawang", true}
 
-	displaystudent1 := displaystudent(student)
-	displaystudent2 := displaystudent(student2)
+	// pemanggilan method
+	fmt.Println(student.display())
 
-	fmt.Println(displaystudent1)
-	fmt.Println(displaystudent2)
-
-}
-
-func displaystudent(student Students) string {
-	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+	fmt.Println(student2.display())
 
 }
+
+// data_student := []Students{student, student2}
+
+// ekskul := Ekskul{"Futsal", student, data_student, true}
+
+// displayekskul(ekskul)
+
+// displaystudent1 := displaystudent(student)
+// displaystudent2 := displaystudent(student2)
+
+// fmt.Println(displaystudent1)
+// fmt.Println(displaystudent2)
+
+// func displayekskul(ekskul Ekskul) {
+// 	fmt.Printf("nama Ekskul: %s", ekskul.Name)
+// 	fmt.Println(" ")
+// 	fmt.Printf("admin: %s", ekskul.Admin.Nama_Depan)
+// 	fmt.Println(" ")
+// 	fmt.Printf("JUmlah Data : %d", len(ekskul.Data_student))
+// 	fmt.Println(" ")
+// 	fmt.Println("Nama Data :")
+
+// 	for _, data := range ekskul.Data_student {
+// 		fmt.Println(data.Nama_Depan)
+
+// 	}
+
+// }
 
 // student := students{ID: 1, Nama_Depan: "Muhammad Ari", Nama_Belakang: "Ferdiansyah", Alamat: "Bandar Lampung", IsActivate: true}
 
