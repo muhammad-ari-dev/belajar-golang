@@ -2,58 +2,76 @@ package main
 
 import (
 	"fmt"
+	"golang/management"
 )
-
-// belajar struct
-type Students struct {
-	ID            int
-	Nama_Depan    string
-	Nama_Belakang string
-	Alamat        string
-	IsActivate    bool
-}
-
-type Ekskul struct {
-	Name         string
-	Admin        Students
-	Data_student []Students
-	Isavailable  bool
-}
-
-// method
-func (student Students) display() string {
-	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
-
-}
-
-// func displaystudent(student Students) string {
-// return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
-
-// }
 
 func main() {
 
-	student := Students{1, "muhammad", "Ferdiansyah", "bandar lampung", true}
-	student2 := Students{1, "Mela Nur", "Hidayah", "Tulang bawang", true}
+	student := management.Students{1, "muhammad", "Ferdiansyah", "bandar lampung", true}
+	student2 := management.Students{1, "Mela Nur", "Hidayah", "Tulang bawang", true}
 
 	// pemanggilan method
-	fmt.Println(student.display())
+	fmt.Println(student.Display())
 
-	fmt.Println(student2.display())
+	fmt.Println(student2.Display())
 
+	data_student := []management.Students{student, student2}
+
+	ekskul := management.Ekskul{"Futsal", student, data_student, true}
+
+	ekskul.Displayekskul()
+
+	// belajar struct
+	// type Students struct {
+	// 	ID            int
+	// 	Nama_Depan    string
+	// 	Nama_Belakang string
+	// 	Alamat        string
+	// 	IsActivate    bool
+	// }
+
+	// type Ekskul struct {
+	// 	Name         string
+	// 	Admin        Students
+	// 	Data_student []Students
+	// 	Isavailable  bool
+	// }
+
+	// // method
+	// func (student Students) display() string {
+	// 	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+	// }
+	// func (coba Ekskul) displayekskul() {
+	// 	fmt.Printf("nama Ekskul: %s", coba.Name)
+	// 	fmt.Println(" ")
+	// 	fmt.Printf("admin: %s", coba.Admin.Nama_Depan)
+	// 	fmt.Println(" ")
+	// 	fmt.Printf("JUmlah Data : %d", len(coba.Data_student))
+	// 	fmt.Println(" ")
+	// 	fmt.Println("Nama Data :")
+
+	// 	for _, data := range coba.Data_student {
+	// 		fmt.Println(data.Nama_Depan)
+
+	// 	}
+	// }
+
+	// func displaystudent(student Students) string {
+	// return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+	// }
+
+	// //menampilkan funcion ekskul
+	// displayekskul(ekskul)
+
+	// // menampilkan funcion
+	// displaystudent1 := displaystudent(student)
+	// displaystudent2 := displaystudent(student2)
+
+	// fmt.Println(displaystudent1)
+	// fmt.Println(displaystudent2)
 }
-
-// data_student := []Students{student, student2}
-
-// ekskul := Ekskul{"Futsal", student, data_student, true}
-
-// displayekskul(ekskul)
-
-// displaystudent1 := displaystudent(student)
-// displaystudent2 := displaystudent(student2)
-
-// fmt.Println(displaystudent1)
-// fmt.Println(displaystudent2)
 
 // func displayekskul(ekskul Ekskul) {
 // 	fmt.Printf("nama Ekskul: %s", ekskul.Name)
@@ -68,8 +86,6 @@ func main() {
 // 		fmt.Println(data.Nama_Depan)
 
 // 	}
-
-// }
 
 // student := students{ID: 1, Nama_Depan: "Muhammad Ari", Nama_Belakang: "Ferdiansyah", Alamat: "Bandar Lampung", IsActivate: true}
 
