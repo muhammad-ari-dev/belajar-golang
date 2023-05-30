@@ -1,77 +1,163 @@
 package main
 
-import (
-	"fmt"
-	"golang/management"
-)
+// "golang/management"
 
-func main() {
+// //pointer method
+// type Gamer struct {
+// 	Name  string
+// 	Games []string
+// }
 
-	student := management.Students{1, "muhammad", "Ferdiansyah", "bandar lampung", true}
-	student2 := management.Students{1, "Mela Nur", "Hidayah", "Tulang bawang", true}
+// func (gamer *Gamer) Addgame(game string) {
+// 	gamer.Games = append(gamer.Games, game)
+// }
 
-	// pemanggilan method
-	fmt.Println(student.Display())
+// func main() {
+// 	gamer := Gamer{Name: "Ari"}
+// 	gamer.Addgame("fifa")
+// 	gamer.Addgame("konami")
+// 	for _, game := range gamer.Games {
+// 		fmt.Println(game)
+// 	}
 
-	fmt.Println(student2.Display())
+// }
 
-	data_student := []management.Students{student, student2}
+// type Student struct {
+// 	ID   int
+// 	Name string
+// 	GPA  float64
+// }
 
-	ekskul := management.Ekskul{"Futsal", student, data_student, true}
+// func (student *Student) graduation() {
+// 	student.Name = student.Name + " S.Kom"
 
-	ekskul.Displayekskul()
+// }
 
-	// belajar struct
-	// type Students struct {
-	// 	ID            int
-	// 	Nama_Depan    string
-	// 	Nama_Belakang string
-	// 	Alamat        string
-	// 	IsActivate    bool
-	// }
+// func main() {
 
-	// type Ekskul struct {
-	// 	Name         string
-	// 	Admin        Students
-	// 	Data_student []Students
-	// 	Isavailable  bool
-	// }
+// 	student := Student{1, "ari aja", 3.45}
+// 	//pemanggilan funcion pointer
+// 	graduation(&student)
 
-	// // method
-	// func (student Students) display() string {
-	// 	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+// 	fmt.Println(student.Name)
 
-	// }
-	// func (coba Ekskul) displayekskul() {
-	// 	fmt.Printf("nama Ekskul: %s", coba.Name)
-	// 	fmt.Println(" ")
-	// 	fmt.Printf("admin: %s", coba.Admin.Nama_Depan)
-	// 	fmt.Println(" ")
-	// 	fmt.Printf("JUmlah Data : %d", len(coba.Data_student))
-	// 	fmt.Println(" ")
-	// 	fmt.Println("Nama Data :")
+// 	// pemanggilan funcion method
+// 	student.graduation()
 
-	// 	for _, data := range coba.Data_student {
-	// 		fmt.Println(data.Nama_Depan)
+// 	fmt.Println(student.Name)
 
-	// 	}
-	// }
+// }
 
-	// func displaystudent(student Students) string {
-	// return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+// // pointer funcion
+// func graduation(student *Student) {
+// 	student.Name = student.Name + " S.Kom"
+// 	fmt.Println(student.Name)
 
-	// }
+// }
 
-	// //menampilkan funcion ekskul
-	// displayekskul(ekskul)
+// 	// pointer di funcion
+// 	number := 5
+// 	fmt.Println("alamat memory awal:", &number)
+// 	fmt.Println("nilai awal :", number)
 
-	// // menampilkan funcion
-	// displaystudent1 := displaystudent(student)
-	// displaystudent2 := displaystudent(student2)
+// 	change(&number, 100)
 
-	// fmt.Println(displaystudent1)
-	// fmt.Println(displaystudent2)
-}
+// 	fmt.Println("nilai akhir :", number)
+// 	fmt.Println("alamat memory :", &number)
+
+// }
+
+// func change(old *int, new int) {
+// 	*old = new
+// 	fmt.Println("alamat memory :", old)
+// 	fmt.Println("data dalam funcion :", *old)
+
+// //pointer jika deklarasi make var type data pengambilan alamat di kasih bintang
+// var nilaia int = 10
+// var nilaib *int = &nilaia
+
+// fmt.Println(nilaia)
+// fmt.Println(*nilaib)
+
+// nilaia = 20
+// fmt.Println(nilaia)
+// fmt.Println(*nilaib)
+
+// pointer sederhana
+// nilaiA := 5
+// nilaiB := &nilaiA
+
+// fmt.Println(nilaiA)
+// fmt.Println(*nilaiB)
+
+// *nilaiB = 10
+// fmt.Println(*nilaiB)
+// fmt.Println(nilaiA)
+
+// student := management.Students{1, "muhammad", "Ferdiansyah", "bandar lampung", true}
+// student2 := management.Students{1, "Mela Nur", "Hidayah", "Tulang bawang", true}
+
+// // pemanggilan method
+// fmt.Println(student.Display())
+
+// fmt.Println(student2.Display())
+
+// data_student := []management.Students{student, student2}
+
+// ekskul := management.Ekskul{"Futsal", student, data_student, true}
+
+// ekskul.Displayekskul()
+
+// belajar struct
+// type Students struct {
+// 	ID            int
+// 	Nama_Depan    string
+// 	Nama_Belakang string
+// 	Alamat        string
+// 	IsActivate    bool
+// }
+
+// type Ekskul struct {
+// 	Name         string
+// 	Admin        Students
+// 	Data_student []Students
+// 	Isavailable  bool
+// }
+
+// // method
+// func (student Students) display() string {
+// 	return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+// }
+// func (coba Ekskul) displayekskul() {
+// 	fmt.Printf("nama Ekskul: %s", coba.Name)
+// 	fmt.Println(" ")
+// 	fmt.Printf("admin: %s", coba.Admin.Nama_Depan)
+// 	fmt.Println(" ")
+// 	fmt.Printf("JUmlah Data : %d", len(coba.Data_student))
+// 	fmt.Println(" ")
+// 	fmt.Println("Nama Data :")
+
+// 	for _, data := range coba.Data_student {
+// 		fmt.Println(data.Nama_Depan)
+
+// 	}
+// }
+
+// func displaystudent(student Students) string {
+// return fmt.Sprintf("name : %s %s, alamat: %s", student.Nama_Depan, student.Nama_Belakang, student.Alamat)
+
+// }
+
+// //menampilkan funcion ekskul
+// displayekskul(ekskul)
+
+// // menampilkan funcion
+// displaystudent1 := displaystudent(student)
+// displaystudent2 := displaystudent(student2)
+
+// fmt.Println(displaystudent1)
+// fmt.Println(displaystudent2)
 
 // func displayekskul(ekskul Ekskul) {
 // 	fmt.Printf("nama Ekskul: %s", ekskul.Name)
